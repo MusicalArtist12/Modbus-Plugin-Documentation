@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>UModbusClient - Modbus For Unreal</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "UModbusClient";
+        var mkdocs_page_input_path = "UModbusClient.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Modbus For Unreal
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../GettingStarted/">Getting Started</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">UModbusClient</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../UModbusTcpSocket/">UModbusTcpSocket</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Modbus For Unreal</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">UModbusClient</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="umodbusclient">UModbusClient</h1>
+<p><strong>Inherits</strong>: UObject</p>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Return</th>
+<th>Call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UModbusClient*</td>
+<td><a href="#create">Create</a>(UModbusTcpSocket* InPort, int32 TimeoutMs)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><a href="#init">Init</a>(UModbusTcpSocket* InPort, int32 TimeoutMs)</td>
+</tr>
+<tr>
+<td>void</td>
+<td><a href="#disconnect">Disconnect</a>()</td>
+</tr>
+<tr>
+<td>int32</td>
+<td><a href="#read_holding_register">ReadHoldingRegister</a>(int32 Address)</td>
+</tr>
+<tr>
+<td>TArray&lt;int32&gt;</td>
+<td><a href="#read_many_holding_registers">ReadManyHoldingRegisters</a>(int32 Address, int32 Count)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><a href="#write_holding_register">WriteHoldingRegister</a>(int32 Address, int32 Value)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><a href="#write_many_holding_registers">WriteManyHoldingRegisters</a>(int32 Address, TArray&lt;int32&gt; Values)</td>
+</tr>
+<tr>
+<td>int32</td>
+<td><a href="#read_coil">ReadCoil</a>(int32 Address)</td>
+</tr>
+<tr>
+<td>TArray&lt;int32&gt;</td>
+<td><a href="#read_many_coils">ReadManyCoils</a>(int32 Address, int32 Count)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><a href="#write_coil">WriteCoil</a>(int32 Address, bool Value)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><a href="#write_many_coils">WriteManyCoils</a>(int32 Address, TArray&lt;bool&gt; Values)</td>
+</tr>
+<tr>
+<td>void</td>
+<td><a href="#client_debug_print">Client_DebugPrint</a>()</td>
+</tr>
+<tr>
+<td>void</td>
+<td><a href="#begin_destroy">BeginDestroy</a>() <em>virtual override</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<hr id="create">
+<p></hr>
+UModbusClient* <strong>Create</strong>(UModbusTcpSocket* InPort, int32 TimeoutMs)</p>
+<hr id="init">
+<p></hr>
+bool <strong>Init</strong>(UModbusTcpSocket* InPort, int32 TimeoutMs)</p>
+<hr id="disconnect">
+<p></hr>
+void <strong>Disconnect</strong>()</p>
+<hr id="read_holding_register">
+<p></hr>
+int32 <strong>ReadHoldingRegister</strong>(int32 Address)</p>
+<hr id="read_many_holding_registers">
+<p></hr>
+TArray&lt;int32&gt; <strong>ReadManyHoldingRegisters</strong>(int32 Address, int32 Count)</p>
+<hr id="write_holding_register">
+<p></hr>
+bool <strong>WriteHoldingRegister</strong>(int32 Address, int32 Value)</p>
+<hr id="write_many_holding_registers">
+<p></hr>
+bool <strong>WriteManyHoldingRegisters</strong>(int32 Address, TArray&lt;int32&gt; Values)</p>
+<hr id="read_coil">
+<p></hr>
+int32 <strong>ReadCoil</strong>(int32 Address)</p>
+<hr id="read_many_coils">
+<p></hr>
+TArray&lt;int32&gt; <strong>ReadManyCoils</strong>(int32 Address, int32 Count)</p>
+<hr id="write_coil">
+<p></hr>
+bool <strong>WriteCoil</strong>(int32 Address, bool Value)</p>
+<hr id="write_many_coils">
+<p></hr>
+bool <strong>WriteManyCoils</strong>(int32 Address, TArray&lt;bool&gt; Values)</p>
+<hr id="client_debug_print">
+<p></hr>
+void <strong>Client_DebugPrint</strong>()</p>
+<hr id="begin_destroy">
+<p></hr>
+void <strong>BeginDestroy</strong>() <em>virtual override</em></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../GettingStarted/" class="btn btn-neutral float-left" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../UModbusTcpSocket/" class="btn btn-neutral float-right" title="UModbusTcpSocket">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../GettingStarted/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../UModbusTcpSocket/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
