@@ -1,0 +1,9 @@
+site_name: Modbus For Unreal
+nav:
+  - Home: index.md
+  - About: about.md
+  - Getting Started: GettingStarted.md
+  - UModbusClient: UModbusClient.md
+  - UModbusTcpSocket: UModbusTcpSocket.md
+
+theme: readthedocs
