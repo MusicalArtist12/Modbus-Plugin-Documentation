@@ -23,40 +23,40 @@
 ***
 
 <hr id="create"></hr>
-UModbusClient\* **Create**(UModbusTcpSocket* InPort, int32 TimeoutMs)
+<p class="mono-title"><mark>UModbusClient*</mark> Create(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
 
 <hr id="init"></hr>
-bool **Init**(UModbusTcpSocket* InPort, int32 TimeoutMs)
+<p class="mono-title"><mark>bool</mark> Init(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
 
 <hr id="disconnect"></hr>
-void **Disconnect**()
+<p class="mono-title"><mark>void</mark> Disconnect()</p>
 
 <hr id="read_holding_register"></hr>
-int32 **ReadHoldingRegister**(int32 Address)
+<p class="mono-title"><mark>int32</mark> ReadHoldingRegister(<mark>int32</mark> Address)</p>
 
 <hr id="read_many_holding_registers"></hr>
-TArray<int32\> **ReadManyHoldingRegisters**(int32 Address, int32 Count)
+<p class="mono-title"><mark>TArray\<<mark>int32</mark>\></mark> ReadManyHoldingRegisters(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
 
 <hr id="write_holding_register"></hr>
-bool **WriteHoldingRegister**(int32 Address, int32 Value)
+<p class="mono-title"><mark>bool</mark> WriteHoldingRegister(<mark>int32</mark> Address, <mark>int32</mark> Value)</p>
 
 <hr id="write_many_holding_registers"></hr>
-bool **WriteManyHoldingRegisters**(int32 Address, TArray<int32\> Values)
+<p class="mono-title"><mark>bool</mark> WriteManyHoldingRegisters(<mark>int32</mark> Address, TArray<<mark>int32</mark>\> Values)</p>
 
 <hr id="read_coil"></hr>
-int32 **ReadCoil**(int32 Address)
+<p class="mono-title"><mark>int32</mark> ReadCoil(<mark>int32</mark> Address)</p>
 
 <hr id="read_many_coils"></hr>
-TArray<int32\> **ReadManyCoils**(int32 Address, int32 Count)
+<p class="mono-title"><mark>TArray&lt;int32&gt;</mark> ReadManyCoils(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
 
 <hr id="write_coil"></hr>
-bool **WriteCoil**(int32 Address, bool Value)
+<p class="mono-title"><mark>bool</mark> WriteCoil(<mark>int32</mark> Address, <mark>bool</mark> Value)</p>
 
 <hr id="write_many_coils"></hr>
-bool **WriteManyCoils**(int32 Address, TArray<bool\> Values)
+<p class="mono-title"><mark>bool</mark> WriteManyCoils(<mark>int32</mark> Address, <mark>TArray&lt;bool&gt;</mark> Values)</p>
 
 <hr id="client_debug_print"></hr>
-void **Client_DebugPrint**()
+<p class="mono-title"><mark>void</mark> Client_DebugPrint()</p>
 
 <hr id="begin_destroy"></hr>
-void **BeginDestroy**() *virtual override*
+<p class="mono-title"><mark>void</mark> BeginDestroy() <i>virtual override</i></p>

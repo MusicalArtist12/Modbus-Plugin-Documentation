@@ -7,3 +7,5 @@ nav:
   - UModbusTcpSocket: UModbusTcpSocket.md
 
 theme: readthedocs
+extra_css:
+  - style.css
