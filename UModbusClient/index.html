@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -153,44 +154,56 @@
 </table>
 <hr />
 <hr id="create">
-<p></hr>
-UModbusClient* <strong>Create</strong>(UModbusTcpSocket* InPort, int32 TimeoutMs)</p>
+</hr>
+<p class="mono-title"><mark>UModbusClient*</mark> Create(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
+
 <hr id="init">
-<p></hr>
-bool <strong>Init</strong>(UModbusTcpSocket* InPort, int32 TimeoutMs)</p>
+</hr>
+<p class="mono-title"><mark>bool</mark> Init(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
+
 <hr id="disconnect">
-<p></hr>
-void <strong>Disconnect</strong>()</p>
+</hr>
+<p class="mono-title"><mark>void</mark> Disconnect()</p>
+
 <hr id="read_holding_register">
-<p></hr>
-int32 <strong>ReadHoldingRegister</strong>(int32 Address)</p>
+</hr>
+<p class="mono-title"><mark>int32</mark> ReadHoldingRegister(<mark>int32</mark> Address)</p>
+
 <hr id="read_many_holding_registers">
-<p></hr>
-TArray&lt;int32&gt; <strong>ReadManyHoldingRegisters</strong>(int32 Address, int32 Count)</p>
+</hr>
+<p class="mono-title"><mark>TArray\<<mark>int32</mark>\></mark> ReadManyHoldingRegisters(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
+
 <hr id="write_holding_register">
-<p></hr>
-bool <strong>WriteHoldingRegister</strong>(int32 Address, int32 Value)</p>
+</hr>
+<p class="mono-title"><mark>bool</mark> WriteHoldingRegister(<mark>int32</mark> Address, <mark>int32</mark> Value)</p>
+
 <hr id="write_many_holding_registers">
-<p></hr>
-bool <strong>WriteManyHoldingRegisters</strong>(int32 Address, TArray&lt;int32&gt; Values)</p>
+</hr>
+<p class="mono-title"><mark>bool</mark> WriteManyHoldingRegisters(<mark>int32</mark> Address, TArray<<mark>int32</mark>\> Values)</p>
+
 <hr id="read_coil">
-<p></hr>
-int32 <strong>ReadCoil</strong>(int32 Address)</p>
+</hr>
+<p class="mono-title"><mark>int32</mark> ReadCoil(<mark>int32</mark> Address)</p>
+
 <hr id="read_many_coils">
-<p></hr>
-TArray&lt;int32&gt; <strong>ReadManyCoils</strong>(int32 Address, int32 Count)</p>
+</hr>
+<p class="mono-title"><mark>TArray&lt;int32&gt;</mark> ReadManyCoils(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
+
 <hr id="write_coil">
-<p></hr>
-bool <strong>WriteCoil</strong>(int32 Address, bool Value)</p>
+</hr>
+<p class="mono-title"><mark>bool</mark> WriteCoil(<mark>int32</mark> Address, <mark>bool</mark> Value)</p>
+
 <hr id="write_many_coils">
-<p></hr>
-bool <strong>WriteManyCoils</strong>(int32 Address, TArray&lt;bool&gt; Values)</p>
+</hr>
+<p class="mono-title"><mark>bool</mark> WriteManyCoils(<mark>int32</mark> Address, <mark>TArray&lt;bool&gt;</mark> Values)</p>
+
 <hr id="client_debug_print">
-<p></hr>
-void <strong>Client_DebugPrint</strong>()</p>
+</hr>
+<p class="mono-title"><mark>void</mark> Client_DebugPrint()</p>
+
 <hr id="begin_destroy">
-<p></hr>
-void <strong>BeginDestroy</strong>() <em>virtual override</em></p>
+</hr>
+<p class="mono-title"><mark>void</mark> BeginDestroy() <i>virtual override</i></p>
               
             </div>
           </div><footer>

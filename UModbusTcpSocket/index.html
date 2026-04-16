@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -125,23 +126,35 @@
 </table>
 <hr />
 <hr id="createsocket">
-<p></hr>
-UModbusTcpSocket* <strong>CreateSocket</strong>() <em>static</em></p>
+</hr>
+<p class="mono-title"><mark>UModbusTcpSocket*</mark> <strong>CreateSocket</strong>() <i>static</i></p>
+
+<p>Creates a new UModbusTcpSocket</p>
 <hr id="begindestroy">
-<p></hr>
-void <strong>BeginDestroy</strong>() <em>virtual override</em></p>
+</hr>
+<p class="mono-title"><mark>void</mark> <strong>BeginDestroy</strong>() <i>virtual override</i></p>
+
+<p>Closes the socket before destroying the object.</p>
 <hr id="connect">
-<p></hr>
-bool <strong>Connect</strong>(const FString&amp; Host, int32 Port)</p>
+</hr>
+<p class="mono-title"><mark>bool</mark> <strong>Connect</strong>(<mark>const FString&</mark> Host, <mark>int32</mark> Port)</p>
+
+<p>Connect to a Modbus Host, returns the connection status.</p>
 <hr id="read">
-<p></hr>
-int32 <strong>Read</strong>(uint8* Data, int32 Length, int32 TimeoutMs)</p>
+</hr>
+<p class="mono-title"><mark>int32</mark> <strong>Read</strong>(<mark>uint8*</mark> Data, <mark>int32</mark> Length, <mark>int32</mark> TimeoutMs)</p>
+
+<p>Read data from the socket and writes max Length bytes into Data. Waits TimeoutMs before timing out.</p>
 <hr id="write">
-<p></hr>
-int32 <strong>Write</strong>(const uint8* Data, int32 Length)</p>
+</hr>
+<p class="mono-title"><mark>int32</mark> <strong>Write</strong>(<mark>const uint8*</mark> Data, <mark>int32</mark> Length)</p>
+
+<p>Write Length bytes into the socket from Data</p>
 <hr id="close">
-<p></hr>
-void <strong>Close</strong>()</p>
+</hr>
+<p class="mono-title"><mark>void</mark> <strong>Close</strong>()</p>
+
+<p>Closes the socket.</p>
               
             </div>
           </div><footer>
