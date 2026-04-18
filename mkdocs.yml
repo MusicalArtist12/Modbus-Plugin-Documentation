@@ -9,3 +9,5 @@ nav:
 theme: readthedocs
 extra_css:
   - style.css
+hooks:
+  - hooks.py

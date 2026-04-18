@@ -4,7 +4,7 @@
     mark {
         font-family: monospace;
         color: #6c6c6c;
-        font-size: 0.8em;
+        font-size: 1em;
         font-weight: unset;
         background-color: unset;
         font-style: unset;
@@ -13,4 +13,8 @@
         font-size: 0.8em;
         color: #6c6c6c;
     }
+}
+
+.wy-nav-content {
+    max-width: 1200px !important;
 }

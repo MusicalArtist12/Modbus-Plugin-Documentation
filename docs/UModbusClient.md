@@ -1,62 +1,196 @@
+---
+functions:
+    Create:
+        output: UModbusClient*
+        inputs:
+            - UModbusTcpSocket* InPort
+            - int32 TimeoutMs
+        annotations:
+            - static
+
+    Init:
+        output: bool
+        inputs:
+            - UModbusTcpSocket* InPort
+            - int32 TimeoutMs
+
+    Connect:
+        output: bool
+        inputs:
+            - const FString& Host
+            - int32 Port
+
+    Disconnect:
+        output: void
+
+    ReadHoldingRegister:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32& OutValue
+
+    ReadManyHoldingRegisters:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32 Count
+            - TArray<int32>& OutValue
+
+    WriteHoldingRegister:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32 Value
+
+    WriteManyHoldingRegisters:
+        output: int32
+        inputs:
+            - int32 Address
+            - TArray<int32> Values
+
+    ReadCoil:
+        output: int32
+        inputs:
+            - int32 Address
+            - bool& OutValue
+
+    ReadManyCoils:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32 Count
+            - TArray<bool>& OutValue
+
+    WriteCoil:
+        output: int32
+        inputs:
+            - int32 Address
+            - bool Value
+
+    WriteManyCoils:
+        output: int32
+        inputs:
+            - int32 Address
+            - TArray<bool> Values
+
+    ReadInputRegister:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32& OutValue
+
+    ReadManyInputRegisters:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32 Count
+            - TArray<int32>& OutValue
+
+    ReadDiscreteInput:
+        output: int32
+        inputs:
+            - int32 Address
+            - bool& OutValue
+
+    ReadManyDiscreteInputs:
+        output: int32
+        inputs:
+            - int32 Address
+            - int32 Count
+            - TArray<bool>& OutValue
+
+    Client_DebugPrint:
+        output: void
+        inputs: []
+
+    BeginDestroy:
+        output: void
+        inputs: []
+        annotations:
+            - override
+            - virtual
+---
 # UModbusClient
 
-**Inherits**: UObject
+**Inherits**: [UObject](https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/CoreUObject/UObject)
 
 ## Methods
 
-| Return | Call |
-| --- | --- |
-| UModbusClient\* | [Create](#create)(UModbusTcpSocket* InPort, int32 TimeoutMs) |
-| bool | [Init](#init)(UModbusTcpSocket* InPort, int32 TimeoutMs) |
-| void | [Disconnect](#disconnect)() |
-| int32 | [ReadHoldingRegister](#read_holding_register)(int32 Address) |
-| TArray<int32\> | [ReadManyHoldingRegisters](#read_many_holding_registers)(int32 Address, int32 Count) |
-| bool | [WriteHoldingRegister](#write_holding_register)(int32 Address, int32 Value) |
-| bool | [WriteManyHoldingRegisters](#write_many_holding_registers)(int32 Address, TArray<int32\> Values) |
-| int32 | [ReadCoil](#read_coil)(int32 Address) |
-| TArray<int32\> | [ReadManyCoils](#read_many_coils)(int32 Address, int32 Count) |
-| bool | [WriteCoil](#write_coil)(int32 Address, bool Value) |
-| bool | [WriteManyCoils](#write_many_coils)(int32 Address, TArray<bool\> Values) |
-| void | [Client_DebugPrint](#client_debug_print)() |
-| void | [BeginDestroy](#begin_destroy)() *virtual override* |
+<HEADER>
 
-***
+[UModbusClient](/UModbusClient#bweh)
 
-<hr id="create"></hr>
-<p class="mono-title"><mark>UModbusClient*</mark> Create(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
+## Method Descriptions
 
-<hr id="init"></hr>
-<p class="mono-title"><mark>bool</mark> Init(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
+<Create>
 
-<hr id="disconnect"></hr>
-<p class="mono-title"><mark>void</mark> Disconnect()</p>
+Constructor. Creates a UModbusTcpSocket if the input pointer `InPort` is null.
 
-<hr id="read_holding_register"></hr>
-<p class="mono-title"><mark>int32</mark> ReadHoldingRegister(<mark>int32</mark> Address)</p>
+<Init>
 
-<hr id="read_many_holding_registers"></hr>
-<p class="mono-title"><mark>TArray\<<mark>int32</mark>\></mark> ReadManyHoldingRegisters(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
+Attaches InPort and initializes the socket. Called by the constructor.
 
-<hr id="write_holding_register"></hr>
-<p class="mono-title"><mark>bool</mark> WriteHoldingRegister(<mark>int32</mark> Address, <mark>int32</mark> Value)</p>
+<Connect>
 
-<hr id="write_many_holding_registers"></hr>
-<p class="mono-title"><mark>bool</mark> WriteManyHoldingRegisters(<mark>int32</mark> Address, TArray<<mark>int32</mark>\> Values)</p>
+Calls [UModbusTcpSocket.Connect()](UModbusTcpSocket#Connect) on its attached socket.
 
-<hr id="read_coil"></hr>
-<p class="mono-title"><mark>int32</mark> ReadCoil(<mark>int32</mark> Address)</p>
+<Disconnect>
 
-<hr id="read_many_coils"></hr>
-<p class="mono-title"><mark>TArray&lt;int32&gt;</mark> ReadManyCoils(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
+Calls [UModbusTcpSocket.Close()](UModbusTcpSocket#Close) on its attached socket if it was attached.
 
-<hr id="write_coil"></hr>
-<p class="mono-title"><mark>bool</mark> WriteCoil(<mark>int32</mark> Address, <mark>bool</mark> Value)</p>
+<ReadHoldingRegister>
 
-<hr id="write_many_coils"></hr>
-<p class="mono-title"><mark>bool</mark> WriteManyCoils(<mark>int32</mark> Address, <mark>TArray&lt;bool&gt;</mark> Values)</p>
+Writes the contents of the Modbus register at `address` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
 
-<hr id="client_debug_print"></hr>
-<p class="mono-title"><mark>void</mark> Client_DebugPrint()</p>
+<ReadManyHoldingRegisters>
 
-<hr id="begin_destroy"></hr>
-<p class="mono-title"><mark>void</mark> BeginDestroy() <i>virtual override</i></p>
+Writes the contents of the registers starting from `address` and ending at `address + count` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<WriteHoldingRegister>
+
+Writes `Value` to the register at the `address`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<WriteManyHoldingRegisters>
+
+Writes `Values` to the registers between `address` and `address + Values.size()`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<ReadCoil>
+
+Writes the contents of the Modbus coil at `address` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<ReadManyCoils>
+
+Writes the contents of the coils starting from `address` and ending at `address + count` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<WriteCoil>
+
+Writes `Value` to the coil at the `address`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<WriteManyCoils>
+
+Writes `Values` to the coils between `address` and `address + Values.Num()`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<ReadInputRegister>
+
+Writes the contents of the Modbus input register at `address` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+
+<ReadManyInputRegisters>
+
+Writes the contents of the input registers starting from `address` and ending at `address + count` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<ReadDiscreteInput>
+
+Writes the contents of the Modbus discrete input (or "contact") register at `address` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<ReadManyDiscreteInputs>
+
+Writes the contents of the Modbus discrete input (or "contact") registers starting from `address` and ending at `address + count` to `OutValue`. Returns a [nmbs_error](https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0) code.
+
+<Client_DebugPrint>
+
+Debug Function that outputs to [LogTemp](https://dev.epicgames.com/documentation/unreal-engine/logging-in-unreal-engine) whether the socket is valid (NULL) or not.
+
+<BeginDestroy>
+
+Ensures that the socket is disconnected before destroying this object. Overrides [UObject.BeginDestroy()](https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/CoreUObject/UClassProperty/BeginDestroy)
