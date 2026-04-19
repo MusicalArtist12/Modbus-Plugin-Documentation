@@ -13,6 +13,16 @@
         font-size: 0.8em;
         color: #6c6c6c;
     }
+    a.link {
+        font-size: 1.0em;
+        display: none;
+    }
+}
+.mono-title:hover {
+    a.link {
+        font-size: 1.0em;
+        display: inline;
+    }
 }
 
 .wy-nav-content {

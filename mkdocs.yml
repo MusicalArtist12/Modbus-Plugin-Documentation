@@ -5,6 +5,7 @@ nav:
   - Getting Started: GettingStarted.md
   - UModbusClient: UModbusClient.md
   - UModbusTcpSocket: UModbusTcpSocket.md
+  - ModbusError: ModbusError.md
 
 theme: readthedocs
 extra_css:

@@ -32,11 +32,12 @@ def on_page_markdown(markdown: str, page, config, files):
 
         markdown = markdown.replace(f"<{key}>",
                                     f"<hr id=\"{key}\"></hr>\n" +
-                                    f"<p class=\"mono-title\"><mark>{output}</mark> {key}({params}) {annotations}</p>")
+                                    f"<p class=\"mono-title\"><mark>{output}</mark> <strong>{key}</strong>({params}) {annotations} <a class=\"link\" href=\"#{key}\">link</a></p>")
 
 
 
     markdown = markdown.replace("<HEADER>", "\n".join(markdown_table))
+
 
 
     return markdown
@@ -44,7 +45,7 @@ def on_page_markdown(markdown: str, page, config, files):
 def on_page_content(html: str, page, config, files):
     # negative lookahead, as long as its not immediately followed by a header tag, link to subheader, or part of another link
     # this probably doesn't work for everything lol
-    html = re.sub(r"(UModbusTcpSocket|UModbusClient)(?![^<>]*(<\/h[1-6]>)|(<\/a>)|([#\"\.]))", r"<a href=\1 class='re'>\1</a>", html)
+    html = re.sub(r"(UModbusTcpSocket|UModbusClient|ModbusError)(?![^<>]*(<\/h[1-6]>)|(<\/a>)|([#\"\.]))", r"<a href=/\1 class='re'>\1</a>", html)
 
     html = re.sub(r"(TArray)", r"<a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>\1</a>", html)
 
