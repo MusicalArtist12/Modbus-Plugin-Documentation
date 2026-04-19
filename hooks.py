@@ -1,5 +1,7 @@
 import re
 
+# replace <HEADER> with a table using the functions metadata
+# replace <{key}> with an appropriate subheading
 def on_page_markdown(markdown: str, page, config, files):
     functions: object = page.meta.get('functions')
     if functions is None:
