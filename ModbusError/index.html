@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>UModbusTcpSocket - Modbus For Unreal</title>
+    <title>ModbusError - Modbus For Unreal</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,8 +13,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "UModbusTcpSocket";
-        var mkdocs_page_input_path = "UModbusTcpSocket.md";
+        var mkdocs_page_name = "ModbusError";
+        var mkdocs_page_input_path = "ModbusError.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -56,18 +56,14 @@
                 <li class="toctree-l1"><a class="reference internal" href="../UModbusClient/">UModbusClient</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">UModbusTcpSocket</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../UModbusTcpSocket/">UModbusTcpSocket</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../ModbusError/">ModbusError</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">ModbusError</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
       </div>
@@ -84,7 +80,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">UModbusTcpSocket</li>
+      <li class="breadcrumb-item active">ModbusError</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -93,73 +89,104 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="umodbustcpsocket">UModbusTcpSocket</h1>
-<p><strong>Inherits</strong>: <a href="https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/CoreUObject/UObject">UObject</a></p>
-<h2 id="methods">Methods</h2>
+                <h1 id="modbuserror">ModbusError</h1>
+<p>Re-Export of <a href="https://debevv.github.io/nanoMODBUS/nanomodbus_8h.html#a1cb1b1b4b26001764e36a1df4335f7f0">nmbs_error</a>.</p>
+<p>"<em>nanoMODBUS errors. Values &lt;= 0 are [nanoModbus] errors, &gt; 0 are modbus exceptions</em>"</p>
 <table>
 <thead>
 <tr>
-<th>Return</th>
-<th>Call</th>
+<th>Enum</th>
+<th>Value</th>
+<th>Source</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a>*</td>
-<td><a href="#CreateSocket">CreateSocket</a>()</td>
+<td><code>ERROR_INVALID_REQUEST</code></td>
+<td>-8</td>
+<td>nanoModbus</td>
+<td>Received invalid request from client</td>
 </tr>
 <tr>
-<td>void</td>
-<td><a href="#BeginDestroy">BeginDestroy</a>()</td>
+<td><code>ERROR_INVALID_UNIT_ID</code></td>
+<td>-7</td>
+<td>nanoModbus</td>
+<td>Received invalid unit ID in response from server</td>
 </tr>
 <tr>
-<td>bool</td>
-<td><a href="#Connect">Connect</a>(const FString&amp; Host, int32 Port)</td>
+<td><code>ERROR_INVALID_TCP_MBAP</code></td>
+<td>-6</td>
+<td>nanoModbus</td>
+<td>Received invalid TCP MBAP</td>
 </tr>
 <tr>
-<td>int32</td>
-<td><a href="#Read">Read</a>(uint8* Data, int32 Length, int32 TimeoutMs)</td>
+<td><code>ERROR_CRC</code></td>
+<td>-5</td>
+<td>nanoModbus</td>
+<td>Received invalid CRC</td>
 </tr>
 <tr>
-<td>int32</td>
-<td><a href="#Write">Write</a>(const uint8* Data, int32 Length)</td>
+<td><code>ERROR_TRANSPORT</code></td>
+<td>-4</td>
+<td>nanoModbus</td>
+<td>Transport error</td>
 </tr>
 <tr>
-<td>void</td>
-<td><a href="#Close">Close</a>()</td>
+<td><code>ERROR_TIMEOUT</code></td>
+<td>-3</td>
+<td>nanoModbus</td>
+<td>Read/write timeout occurred</td>
+</tr>
+<tr>
+<td><code>ERROR_INVALID_RESPONSE</code></td>
+<td>-2</td>
+<td>nanoModbus</td>
+<td>Received invalid response from server</td>
+</tr>
+<tr>
+<td><code>ERROR_INVALID_ARGUMENT</code></td>
+<td>-1</td>
+<td>nanoModbus</td>
+<td>Invalid argument provided</td>
+</tr>
+<tr>
+<td><code>ERROR_NONE</code></td>
+<td>0</td>
+<td>nanoModbus</td>
+<td>No error</td>
+</tr>
+<tr>
+<td><code>EXCEPTION_ILLEGAL_FUNCTION</code></td>
+<td>1</td>
+<td>Modbus</td>
+<td>Illegal Function</td>
+</tr>
+<tr>
+<td><code>EXCEPTION_ILLEGAL_DATA_ADDRESS</code></td>
+<td>2</td>
+<td>Modbus</td>
+<td>Illegal Data Address</td>
+</tr>
+<tr>
+<td><code>EXCEPTION_ILLEGAL_DATA_VALUE</code></td>
+<td>3</td>
+<td>Modbus</td>
+<td>Illegal Data Value</td>
+</tr>
+<tr>
+<td><code>EXCEPTION_SERVER_DEVICE_FAILURE</code></td>
+<td>4</td>
+<td>Modbus</td>
+<td>Server Device Failure</td>
 </tr>
 </tbody>
 </table>
-<h2 id="method-descriptions">Method Descriptions</h2>
-<hr id="CreateSocket">
-</hr>
-<p class="mono-title"><mark><a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a>*</mark> <strong>CreateSocket</strong>() <i>static</i> <a class="link" href="#CreateSocket">link</a></p>
-
-<hr id="BeginDestroy">
-</hr>
-<p class="mono-title"><mark>void</mark> <strong>BeginDestroy</strong>() <i>override virtual</i> <a class="link" href="#BeginDestroy">link</a></p>
-
-<hr id="Connect">
-</hr>
-<p class="mono-title"><mark>bool</mark> <strong>Connect</strong>(<mark>const FString&</mark> Host, <mark>int32</mark> Port)  <a class="link" href="#Connect">link</a></p>
-
-<hr id="Read">
-</hr>
-<p class="mono-title"><mark>int32</mark> <strong>Read</strong>(<mark>uint8*</mark> Data, <mark>int32</mark> Length, <mark>int32</mark> TimeoutMs)  <a class="link" href="#Read">link</a></p>
-
-<hr id="Write">
-</hr>
-<p class="mono-title"><mark>int32</mark> <strong>Write</strong>(<mark>const uint8*</mark> Data, <mark>int32</mark> Length)  <a class="link" href="#Write">link</a></p>
-
-<hr id="Close">
-</hr>
-<p class="mono-title"><mark>void</mark> <strong>Close</strong>()  <a class="link" href="#Close">link</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../UModbusClient/" class="btn btn-neutral float-left" title="UModbusClient"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../ModbusError/" class="btn btn-neutral float-right" title="ModbusError">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../UModbusTcpSocket/" class="btn btn-neutral float-left" title="UModbusTcpSocket"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -182,10 +209,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../UModbusClient/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../UModbusTcpSocket/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../ModbusError/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

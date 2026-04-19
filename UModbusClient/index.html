@@ -57,11 +57,17 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#methods">Methods</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#method-descriptions">Method Descriptions</a>
+    </li>
     </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../UModbusTcpSocket/">UModbusTcpSocket</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ModbusError/">ModbusError</a>
                 </li>
               </ul>
       </div>
@@ -88,7 +94,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="umodbusclient">UModbusClient</h1>
-<p><strong>Inherits</strong>: UObject</p>
+<p><strong>Inherits</strong>: <a href="https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/CoreUObject/UObject">UObject</a></p>
 <h2 id="methods">Methods</h2>
 <table>
 <thead>
@@ -99,111 +105,171 @@
 </thead>
 <tbody>
 <tr>
-<td>UModbusClient*</td>
-<td><a href="#create">Create</a>(UModbusTcpSocket* InPort, int32 TimeoutMs)</td>
+<td><a href=/UModbusClient class='re'>UModbusClient</a>*</td>
+<td><a href="#Create">Create</a>(<a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a>* InPort, int32 TimeoutMs)</td>
 </tr>
 <tr>
 <td>bool</td>
-<td><a href="#init">Init</a>(UModbusTcpSocket* InPort, int32 TimeoutMs)</td>
+<td><a href="#Init">Init</a>(<a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a>* InPort, int32 TimeoutMs)</td>
+</tr>
+<tr>
+<td>bool</td>
+<td><a href="#Connect">Connect</a>(const FString&amp; Host, int32 Port)</td>
 </tr>
 <tr>
 <td>void</td>
-<td><a href="#disconnect">Disconnect</a>()</td>
+<td><a href="#Disconnect">Disconnect</a>()</td>
 </tr>
 <tr>
-<td>int32</td>
-<td><a href="#read_holding_register">ReadHoldingRegister</a>(int32 Address)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadHoldingRegister">ReadHoldingRegister</a>(int32 Address, int32&amp; OutValue)</td>
 </tr>
 <tr>
-<td>TArray&lt;int32&gt;</td>
-<td><a href="#read_many_holding_registers">ReadManyHoldingRegisters</a>(int32 Address, int32 Count)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadManyHoldingRegisters">ReadManyHoldingRegisters</a>(int32 Address, int32 Count, <a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;int32&gt;&amp; OutValue)</td>
 </tr>
 <tr>
-<td>bool</td>
-<td><a href="#write_holding_register">WriteHoldingRegister</a>(int32 Address, int32 Value)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#WriteHoldingRegister">WriteHoldingRegister</a>(int32 Address, int32 Value)</td>
 </tr>
 <tr>
-<td>bool</td>
-<td><a href="#write_many_holding_registers">WriteManyHoldingRegisters</a>(int32 Address, TArray&lt;int32&gt; Values)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#WriteManyHoldingRegisters">WriteManyHoldingRegisters</a>(int32 Address, <a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;int32&gt; Values)</td>
 </tr>
 <tr>
-<td>int32</td>
-<td><a href="#read_coil">ReadCoil</a>(int32 Address)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadCoil">ReadCoil</a>(int32 Address, bool&amp; OutValue)</td>
 </tr>
 <tr>
-<td>TArray&lt;int32&gt;</td>
-<td><a href="#read_many_coils">ReadManyCoils</a>(int32 Address, int32 Count)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadManyCoils">ReadManyCoils</a>(int32 Address, int32 Count, <a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;bool&gt;&amp; OutValue)</td>
 </tr>
 <tr>
-<td>bool</td>
-<td><a href="#write_coil">WriteCoil</a>(int32 Address, bool Value)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#WriteCoil">WriteCoil</a>(int32 Address, bool Value)</td>
 </tr>
 <tr>
-<td>bool</td>
-<td><a href="#write_many_coils">WriteManyCoils</a>(int32 Address, TArray&lt;bool&gt; Values)</td>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#WriteManyCoils">WriteManyCoils</a>(int32 Address, <a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;bool&gt; Values)</td>
+</tr>
+<tr>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadInputRegister">ReadInputRegister</a>(int32 Address, int32&amp; OutValue)</td>
+</tr>
+<tr>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadManyInputRegisters">ReadManyInputRegisters</a>(int32 Address, int32 Count, <a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;int32&gt;&amp; OutValue)</td>
+</tr>
+<tr>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadDiscreteInput">ReadDiscreteInput</a>(int32 Address, bool&amp; OutValue)</td>
+</tr>
+<tr>
+<td><a href=/ModbusError class='re'>ModbusError</a></td>
+<td><a href="#ReadManyDiscreteInputs">ReadManyDiscreteInputs</a>(int32 Address, int32 Count, <a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;bool&gt;&amp; OutValue)</td>
 </tr>
 <tr>
 <td>void</td>
-<td><a href="#client_debug_print">Client_DebugPrint</a>()</td>
+<td><a href="#Client_DebugPrint">Client_DebugPrint</a>()</td>
 </tr>
 <tr>
 <td>void</td>
-<td><a href="#begin_destroy">BeginDestroy</a>() <em>virtual override</em></td>
+<td><a href="#BeginDestroy">BeginDestroy</a>()</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<hr id="create">
+<h2 id="method-descriptions">Method Descriptions</h2>
+<hr id="Create">
 </hr>
-<p class="mono-title"><mark>UModbusClient*</mark> Create(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
+<p class="mono-title"><mark><a href=/UModbusClient class='re'>UModbusClient</a>*</mark> <strong>Create</strong>(<mark><a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a>*</mark> InPort, <mark>int32</mark> TimeoutMs) <i>static</i> <a class="link" href="#Create">link</a></p>
 
-<hr id="init">
+<p>Constructor. Creates a <a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a> if the input pointer <code>InPort</code> is null.</p>
+<hr id="Init">
 </hr>
-<p class="mono-title"><mark>bool</mark> Init(<mark>UModbusTcpSocket*</mark> InPort, <mark>int32</mark> TimeoutMs)</p>
+<p class="mono-title"><mark>bool</mark> <strong>Init</strong>(<mark><a href=/UModbusTcpSocket class='re'>UModbusTcpSocket</a>*</mark> InPort, <mark>int32</mark> TimeoutMs)  <a class="link" href="#Init">link</a></p>
 
-<hr id="disconnect">
+<p>Attaches InPort and initializes the socket. Called by the constructor.</p>
+<hr id="Connect">
 </hr>
-<p class="mono-title"><mark>void</mark> Disconnect()</p>
+<p class="mono-title"><mark>bool</mark> <strong>Connect</strong>(<mark>const FString&</mark> Host, <mark>int32</mark> Port)  <a class="link" href="#Connect">link</a></p>
 
-<hr id="read_holding_register">
+<p>Calls <a href="UModbusTcpSocket#Connect">UModbusTcpSocket.Connect()</a> on its attached socket.</p>
+<hr id="Disconnect">
 </hr>
-<p class="mono-title"><mark>int32</mark> ReadHoldingRegister(<mark>int32</mark> Address)</p>
+<p class="mono-title"><mark>void</mark> <strong>Disconnect</strong>()  <a class="link" href="#Disconnect">link</a></p>
 
-<hr id="read_many_holding_registers">
+<p>Calls <a href="UModbusTcpSocket#Close">UModbusTcpSocket.Close()</a> on its attached socket if it was attached.</p>
+<hr id="ReadHoldingRegister">
 </hr>
-<p class="mono-title"><mark>TArray\<<mark>int32</mark>\></mark> ReadManyHoldingRegisters(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadHoldingRegister</strong>(<mark>int32</mark> Address, <mark>int32&</mark> OutValue)  <a class="link" href="#ReadHoldingRegister">link</a></p>
 
-<hr id="write_holding_register">
+<p>Writes the contents of the Modbus register at <code>address</code> to <code>OutValue</code>.</p>
+<hr id="ReadManyHoldingRegisters">
 </hr>
-<p class="mono-title"><mark>bool</mark> WriteHoldingRegister(<mark>int32</mark> Address, <mark>int32</mark> Value)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadManyHoldingRegisters</strong>(<mark>int32</mark> Address, <mark>int32</mark> Count, <mark><a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;int32&gt;&</mark> OutValue)  <a class="link" href="#ReadManyHoldingRegisters">link</a></p>
 
-<hr id="write_many_holding_registers">
+<p>Writes the contents of the registers starting from <code>address</code> and ending at <code>address + count</code> to <code>OutValue</code>.</p>
+<hr id="WriteHoldingRegister">
 </hr>
-<p class="mono-title"><mark>bool</mark> WriteManyHoldingRegisters(<mark>int32</mark> Address, TArray<<mark>int32</mark>\> Values)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>WriteHoldingRegister</strong>(<mark>int32</mark> Address, <mark>int32</mark> Value)  <a class="link" href="#WriteHoldingRegister">link</a></p>
 
-<hr id="read_coil">
+<p>Writes <code>Value</code> to the register at the <code>address</code>.</p>
+<hr id="WriteManyHoldingRegisters">
 </hr>
-<p class="mono-title"><mark>int32</mark> ReadCoil(<mark>int32</mark> Address)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>WriteManyHoldingRegisters</strong>(<mark>int32</mark> Address, <mark><a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;int32&gt;</mark> Values)  <a class="link" href="#WriteManyHoldingRegisters">link</a></p>
 
-<hr id="read_many_coils">
+<p>Writes <code>Values</code> to the registers between <code>address</code> and <code>address + Values.size()</code>.</p>
+<hr id="ReadCoil">
 </hr>
-<p class="mono-title"><mark>TArray&lt;int32&gt;</mark> ReadManyCoils(<mark>int32</mark> Address, <mark>int32</mark> Count)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadCoil</strong>(<mark>int32</mark> Address, <mark>bool&</mark> OutValue)  <a class="link" href="#ReadCoil">link</a></p>
 
-<hr id="write_coil">
+<p>Writes the contents of the Modbus coil at <code>address</code> to <code>OutValue</code>.</p>
+<hr id="ReadManyCoils">
 </hr>
-<p class="mono-title"><mark>bool</mark> WriteCoil(<mark>int32</mark> Address, <mark>bool</mark> Value)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadManyCoils</strong>(<mark>int32</mark> Address, <mark>int32</mark> Count, <mark><a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;bool&gt;&</mark> OutValue)  <a class="link" href="#ReadManyCoils">link</a></p>
 
-<hr id="write_many_coils">
+<p>Writes the contents of the coils starting from <code>address</code> and ending at <code>address + count</code> to <code>OutValue</code>.</p>
+<p><mark>WARNING: This function is not working as expected. We are doing our best to correct this.</mark></p>
+<hr id="WriteCoil">
 </hr>
-<p class="mono-title"><mark>bool</mark> WriteManyCoils(<mark>int32</mark> Address, <mark>TArray&lt;bool&gt;</mark> Values)</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>WriteCoil</strong>(<mark>int32</mark> Address, <mark>bool</mark> Value)  <a class="link" href="#WriteCoil">link</a></p>
 
-<hr id="client_debug_print">
+<p>Writes <code>Value</code> to the coil at the <code>address</code>.</p>
+<hr id="WriteManyCoils">
 </hr>
-<p class="mono-title"><mark>void</mark> Client_DebugPrint()</p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>WriteManyCoils</strong>(<mark>int32</mark> Address, <mark><a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;bool&gt;</mark> Values)  <a class="link" href="#WriteManyCoils">link</a></p>
 
-<hr id="begin_destroy">
+<p>Writes <code>Values</code> to the coils between <code>address</code> and <code>address + Values.Num()</code>.</p>
+<hr id="ReadInputRegister">
 </hr>
-<p class="mono-title"><mark>void</mark> BeginDestroy() <i>virtual override</i></p>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadInputRegister</strong>(<mark>int32</mark> Address, <mark>int32&</mark> OutValue)  <a class="link" href="#ReadInputRegister">link</a></p>
+
+<p>Writes the contents of the Modbus input register at <code>address</code> to <code>OutValue</code>.</p>
+<hr id="ReadManyInputRegisters">
+</hr>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadManyInputRegisters</strong>(<mark>int32</mark> Address, <mark>int32</mark> Count, <mark><a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;int32&gt;&</mark> OutValue)  <a class="link" href="#ReadManyInputRegisters">link</a></p>
+
+<p>Writes the contents of the input registers starting from <code>address</code> and ending at <code>address + count</code> to <code>OutValue</code>.</p>
+<hr id="ReadDiscreteInput">
+</hr>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadDiscreteInput</strong>(<mark>int32</mark> Address, <mark>bool&</mark> OutValue)  <a class="link" href="#ReadDiscreteInput">link</a></p>
+
+<p>Writes the contents of the Modbus discrete input (or "contact") register at <code>address</code> to <code>OutValue</code>.</p>
+<hr id="ReadManyDiscreteInputs">
+</hr>
+<p class="mono-title"><mark><a href=/ModbusError class='re'>ModbusError</a></mark> <strong>ReadManyDiscreteInputs</strong>(<mark>int32</mark> Address, <mark>int32</mark> Count, <mark><a href='https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Core/TArray?lang=en-US'>TArray</a>&lt;bool&gt;&</mark> OutValue)  <a class="link" href="#ReadManyDiscreteInputs">link</a></p>
+
+<p>Writes the contents of the Modbus discrete input (or "contact") registers starting from <code>address</code> and ending at <code>address + count</code> to <code>OutValue</code>.</p>
+<hr id="Client_DebugPrint">
+</hr>
+<p class="mono-title"><mark>void</mark> <strong>Client_DebugPrint</strong>()  <a class="link" href="#Client_DebugPrint">link</a></p>
+
+<p>Debug Function that outputs to <a href="https://dev.epicgames.com/documentation/unreal-engine/logging-in-unreal-engine">LogTemp</a> whether the socket is valid (NULL) or not.</p>
+<hr id="BeginDestroy">
+</hr>
+<p class="mono-title"><mark>void</mark> <strong>BeginDestroy</strong>() <i>override virtual</i> <a class="link" href="#BeginDestroy">link</a></p>
+
+<p>Ensures that the socket is disconnected before destroying this object. Overrides <a href="https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/CoreUObject/UClassProperty/BeginDestroy">UObject.BeginDestroy()</a></p>
               
             </div>
           </div><footer>
