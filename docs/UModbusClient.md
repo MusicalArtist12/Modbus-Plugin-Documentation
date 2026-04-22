@@ -160,8 +160,6 @@ Writes the contents of the Modbus coil at `address` to `OutValue`.
 
 Writes the contents of the coils starting from `address` and ending at `address + count` to `OutValue`.
 
-<mark>WARNING: This function is not working as expected. We are doing our best to correct this.</mark>
-
 <WriteCoil>
 
 Writes `Value` to the coil at the `address`.
