@@ -135,25 +135,32 @@
 </hr>
 <p class="mono-title"><mark><a href=../UModbusTcpSocket class='re'>UModbusTcpSocket</a>*</mark> <strong>CreateSocket</strong>() <i>static</i> <a class="link" href="#CreateSocket">link</a></p>
 
+<p>Creates a UModbusTcpSocket.</p>
 <hr id="BeginDestroy">
 </hr>
 <p class="mono-title"><mark>void</mark> <strong>BeginDestroy</strong>() <i>override virtual</i> <a class="link" href="#BeginDestroy">link</a></p>
 
+<p>Ensures that the socket is closed before the object is freed.</p>
 <hr id="Connect">
 </hr>
 <p class="mono-title"><mark>bool</mark> <strong>Connect</strong>(<mark>const FString&</mark> Host, <mark>int32</mark> Port)  <a class="link" href="#Connect">link</a></p>
 
+<p>Uses <a href="https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Sockets/ISocketSubsystem">ISocketSubsystem</a> to create a socket and configure it. <code>localhost</code> is replaced with <code>127.0.0.1</code>. Returns <code>true</code> if the port sucessfully connects.</p>
 <hr id="Read">
 </hr>
 <p class="mono-title"><mark>int32</mark> <strong>Read</strong>(<mark>uint8*</mark> Data, <mark>int32</mark> Length, <mark>int32</mark> TimeoutMs)  <a class="link" href="#Read">link</a></p>
 
+<p>Read data from the socket. Returns the number of bytes read.</p>
 <hr id="Write">
 </hr>
 <p class="mono-title"><mark>int32</mark> <strong>Write</strong>(<mark>const uint8*</mark> Data, <mark>int32</mark> Length)  <a class="link" href="#Write">link</a></p>
 
+<p>Writes <code>Length</code> bytes from <code>Data</code> onto the socket. Returns the number of bytes written if sucessful and <code>-1</code> if it fails.</p>
 <hr id="Close">
 </hr>
 <p class="mono-title"><mark>void</mark> <strong>Close</strong>()  <a class="link" href="#Close">link</a></p>
+
+<p>Closes the socket.</p>
               
             </div>
           </div><footer>
