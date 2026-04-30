@@ -50,12 +50,24 @@ functions:
 
 <CreateSocket>
 
+Creates a UModbusTcpSocket.
+
 <BeginDestroy>
+
+Ensures that the socket is closed before the object is freed.
 
 <Connect>
 
+Uses [ISocketSubsystem](https://dev.epicgames.com/documentation/unreal-engine/API/Runtime/Sockets/ISocketSubsystem) to create a socket and configure it. `localhost` is replaced with `127.0.0.1`. Returns `true` if the port sucessfully connects.
+
 <Read>
+
+Read data from the socket. Returns the number of bytes read.
 
 <Write>
 
+Writes `Length` bytes from `Data` onto the socket. Returns the number of bytes written if sucessful and `-1` if it fails.
+
 <Close>
+
+Closes the socket.
